@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Astro Khewan Sharma Jyotish Kendra | Vedic Astrology &amp; Navagraha Guidance</title>
+  <meta name="description" content="Astro Khewan Sharma Jyotish Kendra – Vedic astrology consultations, Kundli analysis and Navagraha guidance. Book a consultation request on WhatsApp." />
+  <meta name="theme-color" content="#05030d" />
+  <meta property="og:title" content="Astro Khewan Sharma Jyotish Kendra" />
+  <meta property="og:description" content="Explore the Navagrahas in a 3D universe and request a Vedic astrology consultation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/astrologer.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Intro loader (hidden by js/main.js once the universe is ready) -->
+  <div id="loader" class="loader" role="status" aria-live="polite">
+    <div class="loader__om">ॐ</div>
+    <p class="loader__text" data-i18n="loader.text">Entering the universe…</p>
+    <div class="loader__bar"><span id="loader-progress"></span></div>
+  </div>
+
+  <!-- Fixed 3D universe canvas (created/used by js/main.js) -->
+  <canvas id="universe-canvas" aria-hidden="true"></canvas>
+  <div class="universe-vignette" aria-hidden="true"></div>
+
+  <!-- Shown only if WebGL is unavailable -->
+  <div id="webgl-fallback" class="webgl-fallback" hidden>
+    <p data-i18n="fallback.text">Your device cannot display the 3D universe. The full website and planet information are still available below.</p>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="site-header">
+    <a href="#hero" class="brand" aria-label="Astro Khewan Sharma Jyotish Kendra">
+      <span class="brand__symbol">ॐ</span>
+      <span class="brand__text">
+        <strong>ASTRO KHEWAN SHARMA</strong>
+        <small data-i18n="brand.sub">JYOTISH KENDRA</small>
+      </span>
+    </a>
+
+    <nav class="nav" id="main-nav" aria-label="Main navigation">
+      <a href="#hero" data-i18n="nav.home">Home</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#planets" data-i18n="nav.planets">Navagraha</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#why" data-i18n="nav.why">Why Us</a>
+      <a href="#booking" data-i18n="nav.booking">Book</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn is-active" data-lang-btn="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang-btn="hi" aria-pressed="false">हिं</button>
+      </div>
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== 1. HERO ===================== -->
+    <section class="section hero" id="hero">
+      <div class="hero__content">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Vedic Astrology · Jyotish</p>
+        <h1 class="hero__title">
+          <span data-i18n="hero.title1">Astro Khewan Sharma</span>
+          <span class="gold-text" data-i18n="hero.title2">Jyotish Kendra</span>
+        </h1>
+        <p class="hero__subtitle" data-i18n="hero.subtitle">
+          Step into a luxury cosmic observatory and explore the nine Navagrahas — with traditional Vedic guidance for the questions of your life.
+        </p>
+        <div class="hero__cta">
+          <a href="#booking" class="btn btn--gold" data-i18n="hero.cta1">Request Consultation</a>
+          <a href="#planets" class="btn btn--glass" data-i18n="hero.cta2">Explore the Navagrahas</a>
+        </div>
+        <p class="hero__hint" data-i18n="hero.hint">Scroll to enter the universe ↓</p>
+      </div>
+
+      <div class="hero__portrait reveal">
+        <div class="portrait-frame">
+          <img src="assets/astrologer.png" alt="Astro Khewan Sharma" width="1305" height="1206" fetchpriority="high" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 2. ABOUT ===================== -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <div class="about__media reveal">
+          <div class="portrait-frame portrait-frame--small">
+            <img src="assets/astrologer.png" alt="Astro Khewan Sharma in namaste pose" loading="lazy" decoding="async" width="1305" height="1206" />
+          </div>
+        </div>
+        <div class="about__text glass reveal">
+          <p class="eyebrow" data-i18n="about.eyebrow">About the Astrologer</p>
+          <h2 class="section-title" data-i18n="about.title">Astro Khewan Sharma</h2>
+          <!-- EDITABLE: replace with your own verified biography. Do not add qualifications you do not hold. -->
+          <p data-i18n="about.p1">Astro Khewan Sharma Jyotish Kendra offers guidance rooted in the Vedic astrology tradition (Jyotish), where the positions of the Navagrahas are studied to better understand life's journey.</p>
+          <p data-i18n="about.p2">Every consultation is approached with respect, patience and a sincere effort to listen. Astrology is offered as guidance and reflection, not as a guarantee of outcomes.</p>
+          <ul class="about__points">
+            <li data-i18n="about.pt1">Traditional Vedic (Jyotish) approach</li>
+            <li data-i18n="about.pt2">Consultations in Hindi and English</li>
+            <li data-i18n="about.pt3">Respectful, personal attention</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 3. NINE PLANETS ===================== -->
+    <section class="section planets" id="planets">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="planets.eyebrow">The Nine Navagrahas</p>
+          <h2 class="section-title" data-i18n="planets.title">An Interactive Cosmic Observatory</h2>
+          <p class="section-lead" data-i18n="planets.lead">Tap or click any planet to fly closer and discover its deity, mantra and Vedic significance.</p>
+        </header>
+      </div>
+
+      <!-- The 3D camera frames the planets behind this empty stage -->
+      <div class="planet-stage" id="planet-stage" aria-hidden="true"></div>
+
+      <!-- Button list generated by js/planets.js (also works without WebGL / for keyboard users) -->
+      <div class="container">
+        <div class="planet-selector" id="planet-selector" role="list" aria-label="Navagraha"></div>
+        <p class="planet-note" data-i18n="planets.note">Rahu and Ketu are shadow points (lunar nodes) in Vedic astrology, not physical planets. They are shown here symbolically.</p>
+      </div>
+    </section>
+
+    <!-- ===================== 4. SERVICES ===================== -->
+    <section class="section services" id="services">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
+          <h2 class="section-title" data-i18n="services.title">Astrology Services</h2>
+          <p class="section-lead" data-i18n="services.lead">Contact for consultation details. No prices are listed on this website.</p>
+        </header>
+
+        <div class="services__grid">
+          <article class="service-card glass reveal" data-service="kundli">
+            <div class="service-card__icon">☉</div>
+            <h3 data-i18n="services.kundli.title">Kundli Analysis</h3>
+            <p data-i18n="services.kundli.desc">A detailed reading of your birth chart and planetary positions.</p>
+            <a href="#booking" class="service-card__link" data-service-select="kundli" data-i18n="services.cta">Contact for Consultation</a>
+          </article>
+          <article class="service-card glass reveal" data-service="career">
+            <div class="service-card__icon">♄</div>
+            <h3 data-i18n="services.career.title">Career &amp; Finance</h3>
+            <p data-i18n="services.career.desc">Astrological guidance on work, business and financial direction.</p>
+            <a href="#booking" class="service-card__link" data-service-select="career" data-i18n="services.cta">Contact for Consultation</a>
+          </article>
+          <article class="service-card glass reveal" data-service="marriage">
+            <div class="service-card__icon">♀</div>
+            <h3 data-i18n="services.marriage.title">Marriage &amp; Relationships</h3>
+            <p data-i18n="services.marriage.desc">Kundli matching and guidance for relationships and family life.</p>
+            <a href="#booking" class="service-card__link" data-service-select="marriage" data-i18n="services.cta">Contact for Consultation</a>
+          </article>
+          <article class="service-card glass reveal" data-service="muhurat">
+            <div class="service-card__icon">☽</div>
+            <h3 data-i18n="services.muhurat.title">Muhurat Guidance</h3>
+            <p data-i18n="services.muhurat.desc">Auspicious timing for important events and new beginnings.</p>
+            <a href="#booking" class="service-card__link" data-service-select="muhurat" data-i18n="services.cta">Contact for Consultation</a>
+          </article>
+          <article class="service-card glass reveal" data-service="gemstone">
+            <div class="service-card__icon">♃</div>
+            <h3 data-i18n="services.gemstone.title">Gemstone Guidance</h3>
+            <p data-i18n="services.gemstone.desc">Traditional guidance on gemstones linked to the Navagrahas.</p>
+            <a href="#booking" class="service-card__link" data-service-select="gemstone" data-i18n="services.cta">Contact for Consultation</a>
+          </article>
+          <article class="service-card glass reveal" data-service="vastu">
+            <div class="service-card__icon">♂</div>
+            <h3 data-i18n="services.vastu.title">Vastu Consultation</h3>
+            <p data-i18n="services.vastu.desc">Guidance on harmony and direction for homes and workplaces.</p>
+            <a href="#booking" class="service-card__link" data-service-select="vastu" data-i18n="services.cta">Contact for Consultation</a>
+          </article>
+          <article class="service-card glass reveal" data-service="remedies">
+            <div class="service-card__icon">ॐ</div>
+            <h3 data-i18n="services.remedies.title">Mantra &amp; Remedies</h3>
+            <p data-i18n="services.remedies.desc">Traditional mantra and remedy guidance for planetary balance.</p>
+            <a href="#booking" class="service-card__link" data-service-select="remedies" data-i18n="services.cta">Contact for Consultation</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. WHY CHOOSE US ===================== -->
+    <section class="section why" id="why">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="why.eyebrow">Why Choose Us</p>
+          <h2 class="section-title" data-i18n="why.title">Guidance with Respect and Clarity</h2>
+        </header>
+
+        <div class="why__grid">
+          <div class="why-card glass reveal">
+            <span class="why-card__num">01</span>
+            <h3 data-i18n="why.1.title">Traditional Approach</h3>
+            <p data-i18n="why.1.desc">Guidance based on classical Vedic astrology principles.</p>
+          </div>
+          <div class="why-card glass reveal">
+            <span class="why-card__num">02</span>
+            <h3 data-i18n="why.2.title">Hindi &amp; English</h3>
+            <p data-i18n="why.2.desc">Comfortable communication in the language you prefer.</p>
+          </div>
+          <div class="why-card glass reveal">
+            <span class="why-card__num">03</span>
+            <h3 data-i18n="why.3.title">Personal Attention</h3>
+            <p data-i18n="why.3.desc">Each question is heard with patience and care.</p>
+          </div>
+          <div class="why-card glass reveal">
+            <span class="why-card__num">04</span>
+            <h3 data-i18n="why.4.title">Easy WhatsApp Booking</h3>
+            <p data-i18n="why.4.desc">Send a consultation request in a few taps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 6. BOOKING ===================== -->
+    <section class="section booking" id="booking">
+      <div class="container booking__wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="booking.eyebrow">Appointment</p>
+          <h2 class="section-title" data-i18n="booking.title">Request a Consultation</h2>
+          <p class="section-lead" data-i18n="booking.lead">Fill in the details below. Your request opens in WhatsApp for you to send.</p>
+        </header>
+
+        <form id="booking-form" class="booking-form glass reveal" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="b-name" data-i18n="booking.name">Full Name</label>
+              <input type="text" id="b-name" name="name" autocomplete="name" maxlength="80" data-i18n-placeholder="booking.name.ph" placeholder="Your full name" required />
+              <span class="field__error" id="err-name" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="b-phone" data-i18n="booking.phone">Phone Number</label>
+              <input type="tel" id="b-phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="16" data-i18n-placeholder="booking.phone.ph" placeholder="10-digit mobile number" required />
+              <span class="field__error" id="err-phone" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="b-service" data-i18n="booking.service">Service</label>
+              <select id="b-service" name="service" required>
+                <option value="" data-i18n="booking.service.ph">Select a service</option>
+                <option value="kundli" data-i18n="services.kundli.title">Kundli Analysis</option>
+                <option value="career" data-i18n="services.career.title">Career &amp; Finance</option>
+                <option value="marriage" data-i18n="services.marriage.title">Marriage &amp; Relationships</option>
+                <option value="muhurat" data-i18n="services.muhurat.title">Muhurat Guidance</option>
+                <option value="gemstone" data-i18n="services.gemstone.title">Gemstone Guidance</option>
+                <option value="vastu" data-i18n="services.vastu.title">Vastu Consultation</option>
+                <option value="remedies" data-i18n="services.remedies.title">Mantra &amp; Remedies</option>
+              </select>
+              <span class="field__error" id="err-service" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="b-date" data-i18n="booking.date">Preferred Date</label>
+              <input type="date" id="b-date" name="date" required />
+              <span class="field__error" id="err-date" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="b-time" data-i18n="booking.time">Preferred Time</label>
+              <input type="time" id="b-time" name="time" required />
+              <span class="field__error" id="err-time" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="b-message" data-i18n="booking.message">Message (optional)</label>
+              <textarea id="b-message" name="message" rows="3" maxlength="500" data-i18n-placeholder="booking.message.ph" placeholder="Briefly describe your question"></textarea>
+              <span class="field__error" id="err-message" role="alert"></span>
+            </div>
+          </div>
+
+          <p class="booking-note" data-i18n="booking.note">This is a booking request, not a confirmed appointment. The appointment is confirmed only after a reply from Astro Khewan Sharma Jyotish Kendra.</p>
+
+          <button type="submit" class="btn btn--gold btn--block" id="booking-submit" data-i18n="booking.submit">Send Request on WhatsApp</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===================== 7. CONTACT ===================== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+          <h2 class="section-title" data-i18n="contact.title">Get in Touch</h2>
+        </header>
+
+        <div class="contact__grid">
+          <a class="contact-card glass reveal" href="https://wa.me/918375890764" target="_blank" rel="noopener noreferrer">
+            <span class="contact-card__icon">✆</span>
+            <h3>WhatsApp</h3>
+            <p>+91 83758 90764</p>
+          </a>
+          <a class="contact-card glass reveal" href="tel:+918375890764">
+            <span class="contact-card__icon">☎</span>
+            <h3 data-i18n="contact.call">Call</h3>
+            <p>8375890764</p>
+          </a>
+          <a class="contact-card glass reveal" href="mailto:astrokhewan@gmail.com">
+            <span class="contact-card__icon">✉</span>
+            <h3 data-i18n="contact.email">Email</h3>
+            <p>astrokhewan@gmail.com</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== PLANET INFO PANEL ===================== -->
+  <aside id="planet-panel" class="planet-panel glass-strong" role="dialog" aria-modal="false" aria-labelledby="pp-name" aria-hidden="true" tabindex="-1">
+    <button type="button" class="planet-panel__close" id="pp-close" aria-label="Close">×</button>
+    <p class="eyebrow" id="pp-kicker"></p>
+    <h3 class="planet-panel__name" id="pp-name"></h3>
+    <p class="planet-panel__names" id="pp-names"></p>
+
+    <dl class="planet-panel__list">
+      <div>
+        <dt data-i18n="panel.deity">Associated Deity</dt>
+        <dd id="pp-deity"></dd>
+      </div>
+      <div>
+        <dt data-i18n="panel.mantra">Traditional Mantra</dt>
+        <dd class="mantra" id="pp-mantra" lang="sa"></dd>
+        <button type="button" class="btn btn--glass btn--small" id="pp-copy" data-i18n="panel.copy">Copy Mantra</button>
+      </div>
+      <div>
+        <dt data-i18n="panel.significance">Vedic Significance</dt>
+        <dd id="pp-significance"></dd>
+      </div>
+    </dl>
+    <p class="planet-panel__note" id="pp-note"></p>
+  </aside>
+
+  <!-- ===================== 8. FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <span class="brand__symbol">ॐ</span>
+        <strong>ASTRO KHEWAN SHARMA</strong>
+        <small data-i18n="brand.sub">JYOTISH KENDRA</small>
+        <p data-i18n="footer.tag">Vedic astrology guidance, with respect and clarity.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#planets" data-i18n="nav.planets">Navagraha</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#booking" data-i18n="nav.booking">Book</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="footer__contact">
+        <a href="https://wa.me/918375890764" target="_blank" rel="noopener noreferrer">WhatsApp: 8375890764</a>
+        <a href="mailto:astrokhewan@gmail.com">astrokhewan@gmail.com</a>
+      </div>
+    </div>
+    <p class="footer__disclaimer" data-i18n="footer.disclaimer">Astrology is offered for guidance and reflection and does not guarantee outcomes. It is not a substitute for medical, legal or financial advice.</p>
+    <p class="footer__copy">© <span id="year"></span> Astro Khewan Sharma Jyotish Kendra. <span data-i18n="footer.rights">All rights reserved.</span></p>
+  </footer>
+
+  <!-- Libraries (pinned versions, global builds) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Project scripts: ORDER MATTERS -->
+  <script src="js/translations.js"></script>
+  <script src="js/planets.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
